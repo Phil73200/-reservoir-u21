@@ -119,7 +119,7 @@ function tooltipHtml(sex,disc,year,nat){
   const selected=all.filter(a=>a.WorldRank<=limit);
   const d=row(sex,disc,year,nat);
   const list=selected.length
-    ? selected.map(a=>`<div class="tip-athlete"><strong>${escapeHtml(a.Fullname)}</strong><span>${a.WorldRank}e mondial · ${Number(a.Basepoints).toFixed(2)} pts</span></div>`).join("")
+    ? selected.map(a=>`<div class="tip-athlete"><strong>${escapeHtml(a.Fullname)} (${escapeHtml(a.BirthYear)})</strong><span>${a.WorldRank}e mondial · ${Number(a.Basepoints).toFixed(2)} pts</span></div>`).join("")
     : `<div class="tip-empty">Aucun athlète dans le ${escapeHtml(level)}</div>`;
   return `<div class="tip-title">${sexName} · ${discName} · ${year} · ${nat}</div>
     <div class="tip-summary"><strong>${level} : ${selected.length}</strong><br>Top300 : ${d.Top300} · Top200 : ${d.Top200} · Top100 : ${d.Top100}<br>Meilleur rang : ${d.BestWorldRank??"—"}</div>
